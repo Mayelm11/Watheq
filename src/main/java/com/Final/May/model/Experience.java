@@ -4,14 +4,10 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
@@ -37,11 +33,9 @@ public class Experience implements Serializable {
                 private Company CR;
                 
                 @Id
-                @GeneratedValue(strategy = GenerationType.AUTO)
-                @NotNull(message = " cannot be Empty ")
-          	  @Min(value = 10, message = "Nationa should not be less than 18")
-          	  @Max(value = 10, message = "Nationa should not be greater than 150")
-                private long Exp_id;
+          	  @Column(name = "Exp_id")
+          	  @NotNull(message = " cannot be Empty ")
+          	   private String Exp_id;
 
                 
                 @Column(name = "e_position", nullable=false)
@@ -96,11 +90,11 @@ public class Experience implements Serializable {
 					this.CR = cr;
 				}
 
-				public long getExp_id() {
+				public String getExp_id() {
 					return Exp_id;
 				}
 
-				public void setExp_id(long exp_id) {
+				public void setExp_id(String exp_id) {
 					Exp_id = exp_id;
 				}
 
@@ -160,7 +154,7 @@ public class Experience implements Serializable {
 					this.ref_email = ref_email;
 				}
 				@Builder
-				public Experience(Individual nationalID, Education edu_iD, Company cr, long exp_id, String e_position,
+				public Experience(Individual nationalID, Education edu_iD, Company cr, String exp_id, String e_position,
 						String name_company, Timestamp s_date, Timestamp e_date, String add_by, String ref_name,
 						String ref_email) {
 					super();

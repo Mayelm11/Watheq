@@ -2,8 +2,9 @@ package com.Final.May.ModelMapper;
 
 
 
-import com.Final.MayDTO.IndivDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.IndivDTO;
 import com.Final.May.Mapper.IndividualMapper;
 import com.Final.May.model.Individual;
 

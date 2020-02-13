@@ -2,8 +2,9 @@ package com.Final.May.ModelMapper;
 
 
 
-import com.Final.MayDTO.CompDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.CompDTO;
 import com.Final.May.Mapper.ComMapper;
 import com.Final.May.model.Company;
 

@@ -2,41 +2,33 @@ package com.Final.May.model;
 
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@AllArgsConstructor
 @MappedSuperclass
+@Setter
+@Getter
 public class W_User implements Serializable {
 	
 	private static final long serialVersionUID = -3009157732242241606L;
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column (name="userId")
-  @NotNull(message = " cannot be Empty ")
-  @Min(value = 10, message = "Nationa should not be less than 18")
-  @Max(value = 10, message = "Nationa should not be greater than 150")
-   private long userId;
  
+//  @Column (name="userId")
+//  @NotNull(message = " cannot be Empty ")
+//  @Size(min=10, max=10)
+//   private String userId;
+// 
   
   @Column(name = "email", nullable = false, unique=true)
   @Email(message = "email should be a valid email")
 private String email;
   
   @Column(name = "phoneNumber" ,nullable = false, unique=true)
-  @NotNull(message = " cannot be Empty ")
+  @NotNull(message = "Phone number cannot be empty")
    private String phoneNumber;
   
   @Column(name = "address" ,nullable = false)
@@ -44,8 +36,6 @@ private String email;
    private String address;
   
   @Column(name = "password" ,nullable = false)
-  @Min(value = 10, message = "Nationa should not be less than 10")
-  @Max(value = 10, message = "Nationa should not be greater than 18")
   @NotNull(message = " cannot be Empty ")
    private String password;
 
@@ -63,54 +53,10 @@ private String email;
  }//end User()
 
 
- public long getUser_id() {
-  return userId;
- }
-
-
- public String getEmail() {
-  return email;
- }//end getEmail()
-
-
- public void setEmail(String email) {
-  this.email = email;
- }//end setEmail()
-
-
- public String getPhone_number() {
-  return phoneNumber;
- }//end getPhone_number()
-
-
- public void setPhone_number(String phone_number) {
-  this.phoneNumber = phone_number;
- }//end setPhone_number()
-
-
- public String getAddress() {
-  return address;
- }//end getAddress()
-
-
- public void setAddress(String address) {
-  this.address = address;
- }//end setAddress()
-
-
- public String getPassword() {
-  return password;
- }//end getPassword()
-
-
- public void setPassword(String password) {
-  this.password = password;
- }//end setPassword()
-
-
+ 
  @Override
  public String toString() {
-  return "User [userId=" + userId + ", email=" + email + ", phoneNumber=" + phoneNumber + ", address="
+  return "User [email=" + email + ", phoneNumber=" + phoneNumber + ", address="
     + address + ", password=" + password + "]";
  }
 

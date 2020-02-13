@@ -2,10 +2,10 @@ package com.Final.May.Service;
 
 import org.springframework.stereotype.Service;
 
+import com.Final.May.DTO.IndivDTO;
 import com.Final.May.ModelMapper.IndividualMapperIm;
 import com.Final.May.model.Individual;
 import com.Final.May.repository.IndividualRepository;
-import com.Final.MayDTO.IndivDTO;
 
 import lombok.AllArgsConstructor;
 @AllArgsConstructor
@@ -17,20 +17,20 @@ public class IndividualService {
 	  
 	  Individual individual = Individual.builder()
 	                 .email(individualDTO.getEmail())
-	                .phone_number(individualDTO.getPhone_number())
+	                .phone_number(individualDTO.getPhoneNumber())
 	                .address(individualDTO.getAddress())
 	                .password(individualDTO.getPassword())
-	                .nationalID(individualDTO.getNationalID())
-	                .firstname(individualDTO.getFirstName())
-	                .mName(individualDTO.getLastName())
-	                .lastname(individualDTO.getMName())
-	                .gender(individualDTO.getGender())
-	                .status(individualDTO.getStatus())
-	                .skills(individualDTO.getSkills())
-	                .dOB(individualDTO.getDOB())
-	                .attachments(individualDTO.getAttachments())
-	                .jOP(individualDTO.getJop())
-	                .mAJOR(individualDTO.getMajor())
+	                .NationalID(individualDTO.getNationalID())
+	                .Firstname(individualDTO.getFirstName())
+	                .MName(individualDTO.getMName())
+	                .Lastname(individualDTO.getLastName())
+	                .Gender(individualDTO.getGender())
+	                .Status(individualDTO.getStatus())
+	                .Skills(individualDTO.getSkills())
+	                .DOB(individualDTO.getDOB())
+	                .Attachments(individualDTO.getAttachments())
+	                .JOP(individualDTO.getJOP())
+	                .MAJOR(individualDTO.getMAJOR())
 
 
 	                .build();

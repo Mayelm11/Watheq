@@ -2,10 +2,10 @@ package com.Final.May.Service;
 
 import org.springframework.stereotype.Service;
 
+import com.Final.May.DTO.LangDTO;
 import com.Final.May.ModelMapper.LanguageMapperImp;
 import com.Final.May.model.Language;
 import com.Final.May.repository.LanguageRepository;
-import com.Final.MayDTO.LangDTO;
 
 import lombok.AllArgsConstructor;
 

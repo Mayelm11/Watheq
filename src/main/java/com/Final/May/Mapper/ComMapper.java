@@ -1,7 +1,7 @@
 package com.Final.May.Mapper;
 
+import com.Final.May.DTO.CompDTO;
 import com.Final.May.model.Company;
-import com.Final.MayDTO.CompDTO;
 
 public interface ComMapper {
 

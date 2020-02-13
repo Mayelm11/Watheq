@@ -5,24 +5,27 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
- 
+@Setter
+@Getter
 @Entity
 @Table(name = "Individual")
 public class Individual extends W_User implements Serializable {
  
   private static final long serialVersionUID = -3009157732242241606L;
-  //@Id
+  
+  @Id
   @Column(name = "NationalID",unique=true, nullable = false)
   @NotNull(message = " cannot be Empty ")
-  @Min(value = 10, message = "Nationa should not be less than 18")
-  @Max(value = 10, message = "Nationa should not be greater than 150")
+  //@Size(min=10, max=10)
   private String NationalID;
   
   
@@ -71,137 +74,6 @@ public class Individual extends W_User implements Serializable {
 
 
 
-public String getNationalID() {
-	return NationalID;
-}
-
-
-
-public void setNationalID(String nationalID) {
-	NationalID = nationalID;
-}
-
-
-
-public String getFirstname() {
-	return Firstname;
-}
-
-
-
-public void setFirstname(String firstname) {
-	Firstname = firstname;
-}
-
-
-
-public String getMName() {
-	return MName;
-}
-
-
-
-public void setMName(String mName) {
-	MName = mName;
-}
-
-
-
-public String getLastname() {
-	return Lastname;
-}
-
-
-
-public void setLastname(String lastname) {
-	Lastname = lastname;
-}
-
-
-
-public Boolean getGender() {
-	return Gender;
-}
-
-
-
-public void setGender(Boolean gender) {
-	Gender = gender;
-}
-
-
-
-public String getStatus() {
-	return Status;
-}
-
-
-
-public void setStatus(String status) {
-	Status = status;
-}
-
-
-
-public String getSkills() {
-	return Skills;
-}
-
-
-
-public void setSkills(String skills) {
-	Skills = skills;
-}
-
-
-
-public Timestamp getDOB() {
-	return DOB;
-}
-
-
-
-public void setDOB(Timestamp dOB) {
-	DOB = dOB;
-}
-
-
-
-public String getMAJOR() {
-	return MAJOR;
-}
-
-
-
-public void setMAJOR(String mAJOR) {
-	MAJOR = mAJOR;
-}
-
-
-
-public String getAttachments() {
-	return Attachments;
-}
-
-
-
-public void setAttachments(String attachments) {
-	Attachments = attachments;
-}
-
-
-
-public String getJOP() {
-	return JOP;
-}
-
-
-
-public void setJOP(String jOP) {
-	JOP = jOP;
-}
-
-
 
 @Override
 public String toString() {
@@ -219,21 +91,28 @@ public Individual() {
 
 
 @Builder
-public Individual(String email, String phone_number, String address, String password, String nationalID,
-		String firstname, String mName, String lastname, Boolean gender, String status, String skills, Timestamp dOB,
-		String mAJOR, String attachments, String jOP) {
+public Individual(String email, String phone_number, String address, String password, String NationalID,
+		String Firstname, String MName, String Lastname, Boolean Gender, String Status, String Skills, Timestamp DOB,
+		String MAJOR, String Attachments, String JOP) {
 	super(email, phone_number, address, password);
-	NationalID = nationalID;
-	Firstname = firstname;
-	MName = mName;
-	Lastname = lastname;
-	Gender = gender;
-	Status = status;
-	Skills = skills;
-	DOB = dOB;
-	MAJOR = mAJOR;
-	Attachments = attachments;
-	JOP = jOP;
+	this.NationalID = NationalID;
+	this.Firstname = Firstname;
+	this.MName = MName;
+	this.Lastname = Lastname;
+	this.Gender = Gender;
+	this.Status = Status;
+	this.Skills = Skills;
+	this.DOB = DOB;
+	this.MAJOR = MAJOR;
+	this.Attachments = Attachments;
+	this.JOP = JOP;
+}
+
+
+
+public Individual(@NotNull(message = " cannot be Empty ") @Size(min = 10, max = 10) String NationalID) {
+	super();
+	this.NationalID = NationalID;
 }
 
 

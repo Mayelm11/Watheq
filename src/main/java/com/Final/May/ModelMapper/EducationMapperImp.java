@@ -1,8 +1,9 @@
 package com.Final.May.ModelMapper;
 
 
-import com.Final.MayDTO.EduDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.EduDTO;
 import com.Final.May.Mapper.EduMapper;
 import com.Final.May.model.Education;
 

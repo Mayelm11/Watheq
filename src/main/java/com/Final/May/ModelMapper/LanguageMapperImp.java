@@ -2,8 +2,9 @@ package com.Final.May.ModelMapper;
 
 
 
-import com.Final.MayDTO.LangDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.LangDTO;
 import com.Final.May.Mapper.LangMapper;
 import com.Final.May.model.Language;
 

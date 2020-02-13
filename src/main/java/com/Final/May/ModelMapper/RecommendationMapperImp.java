@@ -1,10 +1,9 @@
 package com.Final.May.ModelMapper;
 
 
-import com.Final.MayDTO.RecDTO;
-
 import org.modelmapper.ModelMapper;
 
+import com.Final.May.DTO.RecDTO;
 import com.Final.May.Mapper.RecMapper;
 import com.Final.May.model.Recommendation;
 

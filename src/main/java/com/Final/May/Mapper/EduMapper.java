@@ -1,7 +1,7 @@
 package com.Final.May.Mapper;
 
+import com.Final.May.DTO.EduDTO;
 import com.Final.May.model.Education;
-import com.Final.MayDTO.EduDTO;
 
 public interface EduMapper {
 

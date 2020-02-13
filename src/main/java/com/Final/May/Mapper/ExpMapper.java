@@ -1,7 +1,7 @@
 package com.Final.May.Mapper;
 
+import com.Final.May.DTO.ExpeDTO;
 import com.Final.May.model.Experience;
-import com.Final.MayDTO.ExpeDTO;
 
 public interface ExpMapper {
 

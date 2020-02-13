@@ -16,8 +16,11 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Setter
+@Getter
 @Entity
 @Table(name = "language")
 public class Language implements Serializable {
@@ -25,6 +28,9 @@ public class Language implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
+  
+  
+  
   @ManyToOne(fetch=FetchType.LAZY,optional=false)
   @JoinColumn(name="NationalID",nullable=false)
   private Individual NationalID; 
@@ -54,77 +60,6 @@ public class Language implements Serializable {
    @NotNull(message = " cannot be Empty ")
    private String languge_attach;
 
-
-
-public long getId() {
-	return id;
-}
-
-
-
-public void setId(long id) {
-	this.id = id;
-}
-
-
-
-public String getLanguge_ID() {
-	return languge_ID;
-}
-
-
-
-public void setLanguge_ID(String languge_ID) {
-	this.languge_ID = languge_ID;
-}
-
-
-
-public Individual getNationalID() {
-	return NationalID;
-}
-
-
-
-public void setNationalID(Individual nationalID) {
-	NationalID = nationalID;
-}
-
-
-
-public String getLanguge_name() {
-	return languge_name;
-}
-
-
-
-public void setLanguge_name(String languge_name) {
-	this.languge_name = languge_name;
-}
-
-
-
-public Timestamp getLanguge_date() {
-	return languge_date;
-}
-
-
-
-public void setLanguge_date(Timestamp languge_date) {
-	this.languge_date = languge_date;
-}
-
-
-
-public String getLanguge_attach() {
-	return languge_attach;
-}
-
-
-
-public void setLanguge_attach(String languge_attach) {
-	this.languge_attach = languge_attach;
-}
 
 
 

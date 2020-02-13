@@ -2,10 +2,10 @@ package com.Final.May.Service;
 
 import org.springframework.stereotype.Service;
 
+import com.Final.May.DTO.CertDTO;
 import com.Final.May.ModelMapper.CertificationMapperImp;
 import com.Final.May.model.Certification;
 import com.Final.May.repository.CertificationRepository;
-import com.Final.MayDTO.CertDTO;
 
 import lombok.AllArgsConstructor;
 

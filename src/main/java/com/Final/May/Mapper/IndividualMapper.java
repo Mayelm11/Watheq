@@ -1,7 +1,7 @@
 package com.Final.May.Mapper;
 
+import com.Final.May.DTO.IndivDTO;
 import com.Final.May.model.Individual;
-import com.Final.MayDTO.IndivDTO;
 
 
 public interface IndividualMapper {

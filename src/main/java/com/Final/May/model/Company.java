@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -17,12 +18,14 @@ import lombok.Builder;
 public class Company extends W_User implements Serializable {
  private static final long serialVersionUID = -3009157732242241606L;
    
-  // @Id
+   @Id
    @Column(name = "CR", unique=true,nullable = false)
    @NotNull(message = " cannot be Empty ")
-   @Min(value = 10, message = "Nationa should not be less than 18")
-   @Max(value = 10, message = "Nationa should not be greater than 150")
+  // @Min(value = 10, message = "CR should not be less than 18")
+  // @Max(value = 10, message = "CR should not be greater than 150")
    private String CR;
+   
+   
    // Name of company
    @Column(name = "CompanyName" , nullable = false)
    @NotNull(message = " cannot be Empty ")
@@ -36,12 +39,7 @@ public class Company extends W_User implements Serializable {
    @Column(name = "EndDate" , nullable = false)
    @NotNull(message = " cannot be Empty ")
    private Timestamp EndDate;
- public String getCr() {
-  return CR;
- }
- public void setCr(String CR) {
-  this.CR = CR;
- }
+
  public String getCompanyname() {
   return CompanyName;
  }
@@ -53,8 +51,8 @@ public class Company extends W_User implements Serializable {
 public String getCR() {
 	return CR;
 }
-public void setCR(String cR) {
-	CR = cR;
+public void setCR(String CR) {
+	this.CR = CR;
 }
 public String getCompanyName() {
 	return CompanyName;

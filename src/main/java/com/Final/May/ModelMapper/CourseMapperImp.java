@@ -2,8 +2,9 @@ package com.Final.May.ModelMapper;
 
 
 
-import com.Final.MayDTO.CouDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.CouDTO;
 import com.Final.May.Mapper.CouMapper;
 import com.Final.May.model.Course;
 

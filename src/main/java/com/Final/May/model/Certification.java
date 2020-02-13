@@ -11,33 +11,33 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
-
+import lombok.Getter;
+import lombok.Setter;
+@Setter
+@Getter
 	@Entity
 	@Table(name = "Certification")
 	public class Certification implements Serializable {
 
 	  private static final long serialVersionUID = -3009157732242241606L;
 	
+	  @Id
+	  @Column(name = "CERT_id")
+	  @NotNull(message = " cannot be Empty ")
+	private String CERT_id; 
+	  
+	  
 	  
 	  @ManyToOne(fetch=FetchType.LAZY,optional=false)
-      @JoinColumn(name="NationalID",nullable=false)
+      @JoinColumn(name="NationalID", referencedColumnName = "NationalID",unique=true,nullable=false)
       private Individual NationalID; 
 	  
 	  @ManyToOne(fetch=FetchType.LAZY,optional=false)
 	  @JoinColumn(name="Edu_iD",nullable=false)
 	  private Education Edu_iD; 
-	  
-	  @Id
-	  @Column(name = "CERT_id")
-	  @NotNull(message = " cannot be Empty ")
-	  @Min(value = 10, message = "Nationa should not be less than 18")
-	  @Max(value = 10, message = "Nationa should not be greater than 150")
-	private String CERT_id; 
 	  
 	  @Column(name = "UNI_NAME", nullable = false)
 	  @NotNull(message = " cannot be Empty ")
@@ -69,70 +69,6 @@ import lombok.Builder;
 		 private String ATTACH;
 
 
-	public String getCERT_id() {
-		return CERT_id;
-	}
-
-	public void setCERT_id(String cERT_id) {
-		CERT_id = cERT_id;
-	}
-
-	public String getUNI_NAME() {
-		return UNI_NAME;
-	}
-
-	public void setUNI_NAME(String uNI_NAME) {
-		UNI_NAME = uNI_NAME;
-	}
-
-	public String getADDBY() {
-		return ADDBY;
-	}
-
-	public void setADDBY(String aDDBY) {
-		ADDBY = aDDBY;
-	}
-
-	public Timestamp getCERT_DATE() {
-		return CERT_DATE;
-	}
-
-	public void setCERT_DATE(Timestamp cERT_DATE) {
-		CERT_DATE = cERT_DATE;
-	}
-
-	public double getGPA() {
-		return GPA;
-	}
-
-	public void setGPA(double gPA) {
-		GPA = gPA;
-	}
-
-	public String getDEGREE() {
-		return DEGREE;
-	}
-
-	public void setDEGREE(String dEGREE) {
-		DEGREE = dEGREE;
-	}
-
-	public String getMAJOR() {
-		return MAJOR;
-	}
-
-	public void setMAJOR(String mAJOR) {
-		MAJOR = mAJOR;
-	}
-
-	public String getATTACH() {
-		return ATTACH;
-	}
-
-	public void setATTACH(String aTTACH) {
-		ATTACH = aTTACH;
-	}
-
 	@Override
 	public String toString() {
 		return "Certification [NationalID=" + NationalID + ", Edu_iD=" + Edu_iD + ", CERT_id=" + CERT_id + ", UNI_NAME="
@@ -140,11 +76,11 @@ import lombok.Builder;
 				+ ", MAJOR=" + MAJOR + ", ATTACH=" + ATTACH + ", toString()=" + super.toString() + "]";
 	}
 @Builder
-	public Certification(Individual nationalID, Education edu_iD, String cERT_id, String uNI_NAME, String aDDBY,
+	public Certification(String nationalID, String edu_iD, String cERT_id, String uNI_NAME, String aDDBY,
 			Timestamp cERT_DATE, double gPA, String dEGREE, String mAJOR, String aTTACH) {
 		super();
-		NationalID = nationalID;
-		Edu_iD = edu_iD;
+		NationalID = new Individual (nationalID);
+		Edu_iD = new Education (edu_iD);
 		CERT_id = cERT_id;
 		UNI_NAME = uNI_NAME;
 		ADDBY = aDDBY;

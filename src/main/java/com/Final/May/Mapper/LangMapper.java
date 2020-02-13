@@ -1,7 +1,7 @@
 package com.Final.May.Mapper;
 
+import com.Final.May.DTO.LangDTO;
 import com.Final.May.model.Language;
-import com.Final.MayDTO.LangDTO;
 
 public interface LangMapper {
 

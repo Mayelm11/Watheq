@@ -2,10 +2,10 @@ package com.Final.May.Service;
 
 import org.springframework.stereotype.Service;
 
+import com.Final.May.DTO.RecDTO;
 import com.Final.May.ModelMapper.RecommendationMapperImp;
 import com.Final.May.model.Recommendation;
 import com.Final.May.repository.RecommendationRepository;
-import com.Final.MayDTO.RecDTO;
 
 import lombok.AllArgsConstructor;
 

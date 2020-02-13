@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
@@ -40,9 +38,7 @@ public class Course implements Serializable {
    @Id
    @Column(name = "courseID", nullable = false)
    @NotNull(message = " cannot be Empty ")
-   @Min(value = 10, message = "Nationa should not be less than 18")
-   @Max(value = 10, message = "Nationa should not be greater than 150")
-   private String courseID;
+    private String courseID;
    
    
    @Column(name = "nameCourse", nullable = false)

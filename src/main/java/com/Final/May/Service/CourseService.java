@@ -2,10 +2,10 @@ package com.Final.May.Service;
 
 import org.springframework.stereotype.Service;
 
+import com.Final.May.DTO.CouDTO;
 import com.Final.May.ModelMapper.CourseMapperImp;
 import com.Final.May.model.Course;
 import com.Final.May.repository.CourseRepository;
-import com.Final.MayDTO.CouDTO;
 
 import lombok.AllArgsConstructor;
 

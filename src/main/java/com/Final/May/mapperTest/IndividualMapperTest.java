@@ -6,9 +6,8 @@ package com.Final.May.mapperTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-
+import com.Final.May.DTO.IndivDTO;
 import com.Final.May.ModelMapper.IndividualMapperIm;
-import com.Final.MayDTO.IndivDTO;
 import com.Final.May.model.Individual;
 
 
@@ -29,9 +28,9 @@ import com.Final.May.model.Individual;
                    source.setStatus("W");
                    source.setSkills("W");
                    source.setDOB(null);
-                   source.setMajor("W");
+                   source.setMAJOR("W");
                    source.setAttachments("W");
-                   source.setJop("W");
+                   source.setJOP("W");
 
                    final Individual target = individualMapper.dtoToDomain(source);
 

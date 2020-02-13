@@ -1,8 +1,9 @@
 package com.Final.May.ModelMapper;
 
 
-import com.Final.MayDTO.CertDTO;
 import org.modelmapper.ModelMapper;
+
+import com.Final.May.DTO.CertDTO;
 import com.Final.May.Mapper.CertMapper;
 import com.Final.May.model.Certification;
 
